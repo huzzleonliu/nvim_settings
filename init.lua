@@ -10,7 +10,7 @@ vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 
 -- 添加包管理器
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.vim"
+local lazypath = vim.fn.stdpath("data").."/lazy/lazy.vim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git","clone","--filter=blob:none",
@@ -31,6 +31,11 @@ local plugins={
     "nvim-telescope/telescope.nvim",
     tag="0.1.5",
     dependencies={"nvim-lua/plenary.nvim"}
+  },
+  -- 安装treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build=":TSUpdate"
   }
 }
 require("lazy").setup(plugins)
@@ -50,3 +55,11 @@ vim.keymap.set("n", "<C-p>", builtin.find_files, {}) -- n means "normal mode"
   }
   -- live_grep
   vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+
+-- 配置treesitter
+local configs = require("nvim-treesitter.configs")
+configs.setup({
+  ensure_installed={"lua"},
+  highlight={enable=ture},
+  indent={enable=ture},
+})
