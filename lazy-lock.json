@@ -1,3 +1,5 @@
 {
-  "catppuccin": { "branch": "main", "commit": "afab7ec2a79c7127627dede79c0018b6e45663d0" }
+  "catppuccin": { "branch": "main", "commit": "afab7ec2a79c7127627dede79c0018b6e45663d0" },
+  "plenary.nvim": { "branch": "master", "commit": "663246936325062427597964d81d30eaa42ab1e4" },
+  "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" }
 }

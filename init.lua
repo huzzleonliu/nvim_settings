@@ -7,6 +7,8 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 
+vim.g.mapleader = " "
+
 -- 添加包管理器
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.vim"
 if not vim.loop.fs_stat(lazypath) then
@@ -23,9 +25,28 @@ local plugins={
     "catppuccin/nvim",
     name="catppuccin",
     priority=1000
+  },
+  -- 安装模糊查找器 telescope
+  {
+    "nvim-telescope/telescope.nvim",
+    tag="0.1.5",
+    dependencies={"nvim-lua/plenary.nvim"}
   }
 }
 require("lazy").setup(plugins)
+
+-- 配置主题插件 catppuccin
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
 
+-- 配置telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<C-p>", builtin.find_files, {}) -- n means "normal mode"
+  -- 改变picker的样式
+  require("telescope").setup{
+    pickers = {
+      find_files = { theme = "cursor" }
+    }
+  }
+  -- live_grep
+  vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
