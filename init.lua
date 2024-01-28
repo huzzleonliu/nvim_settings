@@ -5,6 +5,7 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
+vim.cmd("set relativenumber")
 
 -- 添加包管理器
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.vim"
@@ -17,6 +18,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 local plugins={
+  -- 安装主题插件
+  {
+    "catppuccin/nvim",
+    name="catppuccin",
+    priority=1000
+  }
 }
 require("lazy").setup(plugins)
+require("catppuccin").setup()
+vim.cmd.colorscheme "catppuccin"
 
