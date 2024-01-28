@@ -36,6 +36,16 @@ local plugins={
   {
     "nvim-treesitter/nvim-treesitter",
     build=":TSUpdate"
+  },
+  -- 安装neo-tree
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
   }
 }
 require("lazy").setup(plugins)
@@ -63,3 +73,8 @@ configs.setup({
   highlight={enable=ture},
   indent={enable=ture},
 })
+
+-- 配置neo-tree
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
+
+
