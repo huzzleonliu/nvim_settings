@@ -1,13 +1,7 @@
 --vim脚本在lua中需要以vim.cmd来包裹
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set number")
-vim.cmd("set relativenumber")
-
-vim.g.mapleader = " "
+require "user.options"
+require "user.keymaps"
 
 -- 添加包管理器
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -46,7 +40,5 @@ configs.setup({
   indent={enable=ture},
 })
 
--- 配置neo-tree
-vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 
 
