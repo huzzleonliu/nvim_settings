@@ -13,32 +13,6 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath})
 end
 vim.opt.rtp:prepend(lazypath)
-local plugins={}
+--local plugins={}
 require("lazy").setup("plugins")
-
--- 配置主题插件 catppuccin
-require("catppuccin").setup()
-vim.cmd.colorscheme "catppuccin"
-
--- 配置telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<C-p>", builtin.find_files, {}) -- n means "normal mode"
-  -- 改变picker的样式
-  require("telescope").setup{
-    pickers = {
-      find_files = { theme = "cursor" }
-    }
-  }
-  -- live_grep
-  vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-
--- 配置treesitter
-local configs = require("nvim-treesitter.configs")
-configs.setup({
-  ensure_installed={"lua"},
-  highlight={enable=ture},
-  indent={enable=ture},
-})
-
-
 
