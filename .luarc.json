@@ -1,5 +1,9 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "nvimtools"
+    ],
+    "diagnostics.disable": [
+        "redundant-value"
     ]
 }

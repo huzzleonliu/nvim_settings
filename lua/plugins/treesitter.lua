@@ -6,7 +6,8 @@ return{
     -- 配置treesitter
     local configs = require("nvim-treesitter.configs")
     configs.setup({
-      ensure_installed={"lua"},
+      --ensure_installed={"lua", "javascript"},
+      auto_intall = true,
       highlight={enable=ture},
       indent={enable=ture},
     })
