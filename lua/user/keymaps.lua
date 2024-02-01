@@ -48,6 +48,13 @@ keymap("i", "<C-l>", "<ESC>la", {})
 keymap("i", "<C-j>", "<ESC>ja", {})
 keymap("i", "<C-k>", "<ESC>ka", {})
 
+--Delete short cut
+keymap("i", "<C-d>", "<del>", {})
+
+--Move to front and enabled
+keymap("i", "<C-i>", "<ESC>I", {})
+keymap("i", "<C-a>", "<ESC>A", {})
+
 --  Visual --
 --Stay in indentmode
 keymap("v", "<", "<gv", opts)
