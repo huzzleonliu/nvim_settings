@@ -33,6 +33,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 --Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
 
+--Fast Save
+keymap("n", "<C-s>", ":w<CR>", opts)
+
 --  Insert --
 --Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
