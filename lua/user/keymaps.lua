@@ -5,11 +5,6 @@ local term_opts = { silent = true }
 --Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Rename space as leader key
---keymap(" ", "<space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 --Modes
 --  normal_mode = "n"
 --  indert_mode = "i"
@@ -43,17 +38,17 @@ keymap("n", "<C-a>", "gg<S-v>G", opts)
 keymap("i", "jk", "<ESC>", opts)
 
 --Move the cursor
-keymap("i", "<C-h>", "<ESC>i", {})
-keymap("i", "<C-l>", "<ESC>la", {})
-keymap("i", "<C-j>", "<ESC>ja", {})
-keymap("i", "<C-k>", "<ESC>ka", {})
+keymap("i", "<C-h>", "<ESC>i", opts )
+keymap("i", "<C-l>", "<ESC>la", opts )
+keymap("i", "<C-j>", "<ESC>ja", opts)
+keymap("i", "<C-k>", "<ESC>ka", opts)
 
 --Delete short cut
-keymap("i", "<C-d>", "<del>", {})
+keymap("i", "<C-d>", "<del>", opts)
 
 --Move to front and enabled
-keymap("i", "<C-i>", "<ESC>I", {})
-keymap("i", "<C-a>", "<ESC>A", {})
+keymap("i", "<C-i>", "<ESC>I", opts)
+keymap("i", "<C-a>", "<ESC>A", opts)
 
 --  Visual --
 --Stay in indentmode

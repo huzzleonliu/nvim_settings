@@ -16,6 +16,12 @@ return{
         ['"'] = { escape = true, close = true, pair = '""' },
         ["'"] = { escape = true, close = true, pair = "''" },
         ["`"] = { escape = true, close = true, pair = "``" },
+
+        ["<BS>"] = {},
+        ["<C-H>"] = {},
+        ["<C-W>"] = {},
+        ["<CR>"] = { disable_command_mode = true },
+        ["<S-CR>"] = { disable_command_mode = true },
       },
       options = {
         disabled_filetypes = { "text" },
